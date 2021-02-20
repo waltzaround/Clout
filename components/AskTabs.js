@@ -101,6 +101,54 @@ export default function AskTabs() {
           </ActCardDescription>
         </div>
       </ActCardContainer>
+      <ActCardContainer href="/" target="blank">
+        <ActCardImg src="https://placeimg.com/80/80/people/8" />
+        <div>
+          <ActCardTitle>
+            Need a developer to help teach my students some ridiculous
+            javascript framework
+          </ActCardTitle>
+          <ActCardDescription>
+            Salty Walty - Auckland, New Zealand
+          </ActCardDescription>
+        </div>
+      </ActCardContainer>
+      <ActCardContainer href="/" target="blank">
+        <ActCardImg src="https://placeimg.com/80/80/people/8" />
+        <div>
+          <ActCardTitle>
+            Need a developer to help teach my students some ridiculous
+            javascript framework
+          </ActCardTitle>
+          <ActCardDescription>
+            Salty Walty - Auckland, New Zealand
+          </ActCardDescription>
+        </div>
+      </ActCardContainer>
+      <ActCardContainer href="/" target="blank">
+        <ActCardImg src="https://placeimg.com/80/80/people/8" />
+        <div>
+          <ActCardTitle>
+            Need a developer to help teach my students some ridiculous
+            javascript framework
+          </ActCardTitle>
+          <ActCardDescription>
+            Salty Walty - Auckland, New Zealand
+          </ActCardDescription>
+        </div>
+      </ActCardContainer>
+      <ActCardContainer href="/" target="blank">
+        <ActCardImg src="https://placeimg.com/80/80/people/8" />
+        <div>
+          <ActCardTitle>
+            Need a developer to help teach my students some ridiculous
+            javascript framework
+          </ActCardTitle>
+          <ActCardDescription>
+            Salty Walty - Auckland, New Zealand
+          </ActCardDescription>
+        </div>
+      </ActCardContainer>
     </>
   );
 }
@@ -111,7 +159,7 @@ const ActCardContainer = styled("a", {
   margin: "0 0 1rem 0",
   minHeight: "50px",
   display: "grid",
-  gridTemplateColumns: "64px 1fr",
+  gridTemplateColumns: "56px 1fr",
   gap: "1rem",
   padding: "1rem",
   alignItems: "center",
@@ -128,8 +176,8 @@ const ActCardContainer = styled("a", {
 
 const ActCardImg = styled("img", {
   borderRadius: "120px",
-  height: "64px",
-  width: "64px",
+  height: "56px",
+  width: "56px",
 });
 
 const ActCardTitle = styled("h3", {

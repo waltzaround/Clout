@@ -20,8 +20,6 @@ function TabOverride({ children, ...rest }) {
 }
 const tabStyle = ({ $active, $disabled, $theme }) => ({
   color: $active ? "black" : "gray",
-  paddingLeft: "2rem",
-  paddingRight: "2rem",
   ":hover": $disabled
     ? {}
     : {
@@ -37,7 +35,7 @@ const tabBarStyle = ({ $theme }) => ({
   backgroundColor: "rgba(0,0,0,0)",
 });
 
-const content = [<AskTabs />, <OfferTabs />, "Potatoes"];
+const content = [<AskTabs />, <OfferTabs />];
 
 export default function ListMain() {
   const [activeKey, setActiveKey] = React.useState("0");
@@ -54,15 +52,37 @@ export default function ListMain() {
         Tab: { component: TabOverride, style: tabStyle },
       }}
     >
-      <Tab title="12 people asking for help">
+      <Tab
+        title="12 requests"
+        overrides={{
+          Tab: {
+            style: {
+              paddingLeft: "3rem",
+              paddingRight: "3rem",
+              fontSize: "1rem",
+            },
+          },
+        }}
+      >
         <div>{content[Number(activeKey)]}</div>
       </Tab>
-      <Tab title="32 people offering help">
+      <Tab
+        title="32 offers "
+        overrides={{
+          Tab: {
+            style: {
+              paddingLeft: "3rem",
+              paddingRight: "3rem",
+              fontSize: "1rem",
+            },
+          },
+        }}
+      >
         <div>{content[Number(activeKey)]}</div>
       </Tab>
-      <Tab title="lmao">
+      {/* <Tab title="3 resource offers">
         <div>{content[Number(activeKey)]}</div>
-      </Tab>
+      </Tab> */}
     </StatefulTabs>
   );
 }

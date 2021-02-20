@@ -15,23 +15,61 @@ function SelectAtEnd(props) {
         value={props.inputValue}
         id={props.id}
         placeholder="Try 'Robots'"
+        overrides={{
+          Root: {
+            style: {
+              borderTopLeftRadius: "8px",
+              borderBottomLeftRadius: "8px",
+              borderTopRightRadius: "8px",
+              borderBottomRightRadius: "8px",
+            },
+          },
+          StartEnhancer: {
+            style: {
+              paddingLeft: "0",
+              paddingRight: "0",
+            },
+          },
+        }}
       />
       <div className={css({ width: "200px", paddingLeft: "8px" })}>
         <Select
+          placeholder="Everything"
           options={props.options}
           labelKey="id"
           valueKey="color"
           onChange={({ value }) => props.onSelectChange(value)}
           value={props.selectValue}
+          overrides={{
+            ControlContainer: {
+              style: {
+                borderTopLeftRadius: "8px",
+                borderBottomLeftRadius: "8px",
+                borderTopRightRadius: "8px",
+                borderBottomRightRadius: "8px",
+              },
+            },
+          }}
         />
       </div>
       <div className={css({ width: "200px", paddingLeft: "8px" })}>
         <Select
+          placeholder="Nearby"
           options={props.options}
           labelKey="id"
           valueKey="color"
           onChange={({ value }) => props.onSelectChange(value)}
           value={props.selectValue}
+          overrides={{
+            ControlContainer: {
+              style: {
+                borderTopLeftRadius: "8px",
+                borderBottomLeftRadius: "8px",
+                borderTopRightRadius: "8px",
+                borderBottomRightRadius: "8px",
+              },
+            },
+          }}
         />
       </div>
     </div>
@@ -44,7 +82,15 @@ export default function Example() {
   const [endSelectValue, setEndSelectValue] = React.useState([]);
   return (
     <SearchContainer>
-      <FormControl>
+      <FormControl
+        overrides={{
+          ControlContainer: {
+            style: {
+              marginBottom: "0",
+            },
+          },
+        }}
+      >
         <SelectAtEnd
           inputValue={endInputValue}
           onInputChange={(v) => setEndInputValue(v)}
@@ -64,7 +110,7 @@ export default function Example() {
 
 const SearchContainer = styled("section", {
   width: "100%",
-  padding: "1rem 1rem 0 1rem",
+  padding: "1rem",
   borderRadius: "12px",
   margin: "1rem 0",
   boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)",
