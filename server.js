@@ -39,6 +39,13 @@ const app = next({ dev })
 const nextJsRequestHandler = app.getRequestHandler()
 
 app.prepare().then(() => {
+  passport.serializeUser(function (user, done) {
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function (user, done) {
+    done(null, user);
+  });
   const server = express()
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use(bodyParser.json());
