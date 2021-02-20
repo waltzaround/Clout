@@ -9,6 +9,7 @@ const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 
 const { backendRequestHandler } = require('./api');
+const { establishDatabaseConnection } = require('./api/db');
 
 const passportStrategy = new Auth0Strategy(
   {
@@ -38,15 +39,17 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const nextJsRequestHandler = app.getRequestHandler()
 
-app.prepare().then(() => {
-  passport.serializeUser(function (user, done) {
-    done(null, user);
-  });
-  
-  passport.deserializeUser(function (user, done) {
-    done(null, user);
-  });
-  const server = express()
+passport.serializeUser(function (user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+  done(null, user);
+});
+
+app.prepare().then(async () => {
+  await establishDatabaseConnection();
+  const server = express();
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use(bodyParser.json());
   server.use(session(sessionConfig));
@@ -64,4 +67,14 @@ app.prepare().then(() => {
     if (err) throw err
     console.log(`> Ready on http://localhost:${port}`)
   })
+})
+
+process.on('uncaughtException', (e) => {
+  console.error(e)
+  process.exit(1);
+})
+
+process.on('unhandledRejection', (e) => {
+  console.error(e)
+  process.exit(1)
 })
