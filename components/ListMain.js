@@ -2,6 +2,7 @@ import * as React from "react";
 import { StatefulTabs, Tab, StyledTab } from "baseui/tabs-motion";
 import { Label2 } from "baseui/typography";
 import AskTabs from "./AskTabs";
+import OfferTabs from "./OfferTabs";
 function TabOverride({ children, ...rest }) {
   return (
     <StyledTab {...rest}>
@@ -36,7 +37,7 @@ const tabBarStyle = ({ $theme }) => ({
   backgroundColor: "rgba(0,0,0,0)",
 });
 
-const content = [<AskTabs />, "32 Offers to help", "Potatoes"];
+const content = [<AskTabs />, <OfferTabs />, "Potatoes"];
 
 export default function ListMain() {
   const [activeKey, setActiveKey] = React.useState("0");

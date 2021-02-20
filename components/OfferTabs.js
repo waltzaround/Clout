@@ -1,89 +1,68 @@
 import { useStyletron, styled } from "baseui";
 
-export default function AskTabs() {
+export default function OfferTabs() {
   const [css] = useStyletron();
   return (
     <>
       <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/1" />
+        <ActCardImg src="https://placeimg.com/80/80/people/9" />
 
         <div>
-          <ActCardTitle>
-            Need a developer to help teach my students some ridiculous
-            javascript framework
-          </ActCardTitle>
+          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
           <ActCardDescription>
             Salty Walty - Auckland, New Zealand
           </ActCardDescription>
         </div>
       </ActCardContainer>
       <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/2" />
+        <ActCardImg src="https://placeimg.com/80/80/people/10" />
         <div>
-          <ActCardTitle>
-            Need a developer to help teach my students some ridiculous
-            javascript framework
-          </ActCardTitle>
+          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
           <ActCardDescription>
             Salty Walty - Auckland, New Zealand
           </ActCardDescription>
         </div>
       </ActCardContainer>
       <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/3" />
+        <ActCardImg src="https://placeimg.com/80/80/people/11" />
         <div>
-          <ActCardTitle>
-            Need a developer to help teach my students some ridiculous
-            javascript framework
-          </ActCardTitle>
+          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
           <ActCardDescription>
             Salty Walty - Auckland, New Zealand
           </ActCardDescription>
         </div>
       </ActCardContainer>
       <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/4" />
+        <ActCardImg src="https://placeimg.com/80/80/people/14" />
         <div>
-          <ActCardTitle>
-            Need a developer to help teach my students some ridiculous
-            javascript framework
-          </ActCardTitle>
+          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
           <ActCardDescription>
             Salty Walty - Auckland, New Zealand
           </ActCardDescription>
         </div>
       </ActCardContainer>
       <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/5" />
+        <ActCardImg src="https://placeimg.com/80/80/people/15" />
         <div>
-          <ActCardTitle>
-            Need a developer to help teach my students some ridiculous
-            javascript framework
-          </ActCardTitle>
+          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
           <ActCardDescription>
             Salty Walty - Auckland, New Zealand
           </ActCardDescription>
         </div>
       </ActCardContainer>
       <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/6" />
+        <ActCardImg src="https://placeimg.com/80/80/people/16" />
         <div>
-          <ActCardTitle>
-            Need a developer to help teach my students some ridiculous
-            javascript framework
-          </ActCardTitle>
+          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
           <ActCardDescription>
             Salty Walty - Auckland, New Zealand
           </ActCardDescription>
         </div>
       </ActCardContainer>
       <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/7" />
+        <ActCardImg src="https://placeimg.com/80/80/people/17" />
         <div>
-          <ActCardTitle>
-            Need a developer to help teach my students some ridiculous
-            javascript framework
-          </ActCardTitle>
+          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
           <ActCardDescription>
             Salty Walty - Auckland, New Zealand
           </ActCardDescription>
@@ -92,10 +71,7 @@ export default function AskTabs() {
       <ActCardContainer href="/" target="blank">
         <ActCardImg src="https://placeimg.com/80/80/people/8" />
         <div>
-          <ActCardTitle>
-            Need a developer to help teach my students some ridiculous
-            javascript framework
-          </ActCardTitle>
+          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
           <ActCardDescription>
             Salty Walty - Auckland, New Zealand
           </ActCardDescription>

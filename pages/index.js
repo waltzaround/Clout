@@ -23,7 +23,9 @@ const Divider = styled("div", {
 
 const Heading = styled("h1", {
   fontSize: "2rem",
+  fontWeight: "600",
   margin: "0",
+  textAlign: "left",
 });
 
 const Description = styled("p", {
@@ -32,6 +34,7 @@ const Description = styled("p", {
   marginBottom: "0",
   color: "#555",
   fontWeight: "400",
+  textAlign: "left",
 });
 
 export default function Home() {
@@ -54,7 +57,9 @@ export default function Home() {
         </MainSectionNoAuth>
       </main>
 
-      <footer className={styles.footer}>Powered by LMAO</footer>
+      <footer className={styles.footer}>
+        Powered by code written by @minh and UX design by @walt
+      </footer>
     </div>
   );
 }

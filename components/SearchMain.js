@@ -67,5 +67,5 @@ const SearchContainer = styled("section", {
   padding: "1rem 1rem 0 1rem",
   borderRadius: "12px",
   margin: "1rem 0",
-  boxShadow: "4px 4px 24px rgba(0, 0, 0, 0.25)",
+  boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)",
 });
