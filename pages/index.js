@@ -21,6 +21,22 @@ const Divider = styled("div", {
   borderRadius: "120px",
 });
 
+const Heading = styled("h1", {
+  fontSize: "2rem",
+  fontWeight: "600",
+  margin: "0",
+  textAlign: "left",
+});
+
+const Description = styled("p", {
+  fontSize: "1rem",
+  marginTop: "0.5rem",
+  marginBottom: "0",
+  color: "#555",
+  fontWeight: "400",
+  textAlign: "left",
+});
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -31,14 +47,19 @@ export default function Home() {
 
       <main className={styles.main}>
         <MainSectionNoAuth>
-          <h1>Discover Clout</h1>
-          <p>aaaaaaaaa</p>
+          <Heading>Volunteer in New Zealand</Heading>
+          <Description>
+            Discover ways to get involved in volunteering and help out in your
+            community. Find ways to ask for help when you need it.
+          </Description>
           <SearchMain />
           <ListMain />
         </MainSectionNoAuth>
       </main>
 
-      <footer className={styles.footer}>Powered by LMAO</footer>
+      <footer className={styles.footer}>
+        Powered by code written by @minh and UX design by @walt
+      </footer>
     </div>
   );
 }
