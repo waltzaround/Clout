@@ -10,6 +10,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "mongoose": "^5.11.17",
     "next": "10.0.7",
     "react": "17.0.1",
