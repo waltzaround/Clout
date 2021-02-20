@@ -1,5 +1,15 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { styled } from "baseui";
+
+const MainSectionNoAuth = styled("section", {
+  display: "grid",
+  width: "calc(100vw - 5rem)",
+  margin: "0 auto",
+  maxWidth: "1440px",
+  height: "100%",
+  "@media screen and (max-width: 880px)": {},
+});
 
 export default function Home() {
   return (
@@ -10,19 +20,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <section className={styles.mainSection}></section>
+        <MainSectionNoAuth>aaaaa</MainSectionNoAuth>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <footer className={styles.footer}>Powered by LMAO</footer>
     </div>
   );
 }
