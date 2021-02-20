@@ -21,7 +21,7 @@ const MenuContainer = styled("div", {
 
 const MenuLogin = styled("div", {
   width: "100%",
-  height: "6rem",
+  height: "5.5rem",
   padding: "1rem",
   borderRadius: "12px",
   boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)",
@@ -60,8 +60,8 @@ const Description = styled("p", {
 });
 const ProfileImg = styled("img", {
   borderRadius: "120px",
-  height: "64px",
-  width: "64px",
+  height: "56px",
+  width: "56px",
   marginRight: "0.5rem",
 });
 const ProfileTitle = styled("h1", {
@@ -73,11 +73,13 @@ const ProfileStat = styled("p", {
   fontSize: "1rem",
   fontWeight: "400",
   margin: "0",
+  color: "#666",
 });
 const ProfileContainer = styled("div", {
   alignSelf: "center",
   display: "flex",
   flexDirection: "column",
+  lineHeight: "1.5",
 });
 
 export default function Home() {

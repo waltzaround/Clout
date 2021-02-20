@@ -8,7 +8,14 @@ import { Search } from "baseui/icon";
 function SelectAtEnd(props) {
   const [css] = useStyletron();
   return (
-    <div className={css({ display: "flex" })}>
+    <div
+      className={css({
+        display: "flex",
+        "@media screen and (max-width: 1024px)": {
+          flexDirection: "column",
+        },
+      })}
+    >
       <Input
         startEnhancer={<Search size="18px" />}
         onChange={(e) => props.onInputChange(e.target.value)}
@@ -32,7 +39,17 @@ function SelectAtEnd(props) {
           },
         }}
       />
-      <div className={css({ width: "200px", paddingLeft: "8px" })}>
+      <div
+        className={css({
+          width: "200px",
+          paddingLeft: "8px",
+          "@media screen and (max-width: 1024px)": {
+            width: "100%",
+            marginTop: "0.5rem",
+            paddingLeft: "0",
+          },
+        })}
+      >
         <Select
           placeholder="Everything"
           options={props.options}
@@ -52,7 +69,17 @@ function SelectAtEnd(props) {
           }}
         />
       </div>
-      <div className={css({ width: "200px", paddingLeft: "8px" })}>
+      <div
+        className={css({
+          width: "200px",
+          paddingLeft: "8px",
+          "@media screen and (max-width: 1024px)": {
+            width: "100%",
+            marginTop: "0.5rem",
+            paddingLeft: "0",
+          },
+        })}
+      >
         <Select
           placeholder="Nearby"
           options={props.options}
