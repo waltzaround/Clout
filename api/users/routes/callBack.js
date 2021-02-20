@@ -1,7 +1,7 @@
-const { authenticate } = require('passport');
+const passport = require('passport');
 
 async function callBackHandler (req, res, next) {
-  return authenticate('auth0', function (err, user, info) {
+  return passport.authenticate('auth0', function (err, user, info) {
     if (err) { 
       return next(err);
     }
@@ -9,10 +9,12 @@ async function callBackHandler (req, res, next) {
       return res.redirect('/login'); 
     }
     req.logIn(user, function (err) {
-      if (err) { return next(err); }
+      if (err) { 
+        return next(err);
+      }
       const returnTo = req.session.returnTo;
       delete req.session.returnTo;
-      res.redirect(returnTo || '/user');
+      res.redirect(returnTo || '/');
     });
   })(req, res, next);
 }
