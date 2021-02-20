@@ -14,6 +14,9 @@ async function callBackHandler (req, res, next) {
       }
       const returnTo = req.session.returnTo;
       delete req.session.returnTo;
+      if(req.session.passport.user.isNewAccount) {
+        return res.redirect('/onboard');
+      }
       res.redirect(returnTo || '/');
     });
   })(req, res, next);
