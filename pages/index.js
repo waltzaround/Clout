@@ -3,6 +3,8 @@ import styles from "../styles/Home.module.css";
 import { styled, useStyletron } from "baseui";
 import { Button } from "baseui/button";
 import SearchMain from "../components/SearchMain";
+import ListMain from "../components/ListMain";
+
 const MainSectionNoAuth = styled("section", {
   display: "grid",
   width: "calc(100vw - 5rem)",
@@ -32,6 +34,7 @@ export default function Home() {
           <h1>Discover Clout</h1>
           <p>aaaaaaaaa</p>
           <SearchMain />
+          <ListMain />
         </MainSectionNoAuth>
       </main>
 
