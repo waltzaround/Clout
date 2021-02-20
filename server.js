@@ -1,27 +1,26 @@
-const { createServer } = require('http')
-const { parse } = require('url')
+const express = require('express')
+const bodyParser = require('body-parser');
 const next = require('next')
 
+const { backendRequestHandler } = require('./api');
+
+const port = parseInt(process.env.PORT, 10) || 8000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
-const handle = app.getRequestHandler()
+const nextJsRequestHandler = app.getRequestHandler()
 
 app.prepare().then(() => {
-  createServer((req, res) => {
-    // Be sure to pass `true` as the second argument to `url.parse`.
-    // This tells it to parse the query portion of the URL.
-    const parsedUrl = parse(req.url, true)
-    const { pathname, query } = parsedUrl
+  const server = express()
+  server.use(bodyParser.urlencoded({ extended: true }))
+  server.use(bodyParser.json())
 
-    if (pathname === '/a') {
-      app.render(req, res, '/a', query)
-    } else if (pathname === '/b') {
-      app.render(req, res, '/b', query)
-    } else {
-      handle(req, res, parsedUrl)
-    }
-  }).listen(8000, (err) => {
+  server.use('/api', backendRequestHandler);
+  server.all('*', (req, res) => {
+    return nextJsRequestHandler(req, res)
+  })
+
+  server.listen(port, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:8000')
+    console.log(`> Ready on http://localhost:${port}`)
   })
 })
