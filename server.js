@@ -1,7 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-const express = require('express')
+const express = require('express');
+const session = require('express-session')
 const bodyParser = require('body-parser');
 const next = require('next');
 const passport = require('passport');
@@ -25,6 +26,13 @@ const passportStrategy = new Auth0Strategy(
   }
 );
 
+const sessionConfig = {
+  secret: process.env.SESSION_SECRET || 'GET YOUR SECRET MAN',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true
+};
+
 const port = parseInt(process.env.PORT, 10) || 8000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -32,8 +40,10 @@ const nextJsRequestHandler = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = express()
-  server.use(bodyParser.urlencoded({ extended: true }))
-  server.use(bodyParser.json())
+  server.use(bodyParser.urlencoded({ extended: true }));
+  server.use(bodyParser.json());
+  server.use(session(sessionConfig));
+
   passport.use(passportStrategy);
 
   server.use(passport.initialize());
