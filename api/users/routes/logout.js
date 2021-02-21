@@ -4,8 +4,7 @@ const querystring = require('querystring');
 
 function logoutHandler(req, res) {
   req.logout();
-
-  const returnTo = req.protocol + '://' + req.hostname;
+  let returnTo = req.protocol + '://' + req.hostname;
   const port = req.connection.localPort;
   if (port !== undefined && port !== 80 && port !== 443) {
     returnTo += ':' + port;
