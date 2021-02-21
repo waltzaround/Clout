@@ -1,84 +1,24 @@
 import { useStyletron, styled } from "baseui";
 
-export default function OfferTabs() {
+export default function OfferTabs({ offers }) {
   const [css] = useStyletron();
-  return (
-    <>
-      <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/9" />
 
+  return offers.map((activity, index) => {
+    return (
+      <ActCardContainer href="/" target="blank" key={index}>
+        <ActCardImg src="https://placeimg.com/80/80/people/1" />
         <div>
-          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
+          <ActCardTitle>
+            {activity.title}
+          </ActCardTitle>
           <ActCardDescription>
-            Salty Walty - Auckland, New Zealand
+            {activity.location}
           </ActCardDescription>
         </div>
       </ActCardContainer>
-      <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/10" />
-        <div>
-          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
-          <ActCardDescription>
-            Salty Walty - Auckland, New Zealand
-          </ActCardDescription>
-        </div>
-      </ActCardContainer>
-      <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/11" />
-        <div>
-          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
-          <ActCardDescription>
-            Salty Walty - Auckland, New Zealand
-          </ActCardDescription>
-        </div>
-      </ActCardContainer>
-      <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/14" />
-        <div>
-          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
-          <ActCardDescription>
-            Salty Walty - Auckland, New Zealand
-          </ActCardDescription>
-        </div>
-      </ActCardContainer>
-      <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/15" />
-        <div>
-          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
-          <ActCardDescription>
-            Salty Walty - Auckland, New Zealand
-          </ActCardDescription>
-        </div>
-      </ActCardContainer>
-      <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/16" />
-        <div>
-          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
-          <ActCardDescription>
-            Salty Walty - Auckland, New Zealand
-          </ActCardDescription>
-        </div>
-      </ActCardContainer>
-      <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/17" />
-        <div>
-          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
-          <ActCardDescription>
-            Salty Walty - Auckland, New Zealand
-          </ActCardDescription>
-        </div>
-      </ActCardContainer>
-      <ActCardContainer href="/" target="blank">
-        <ActCardImg src="https://placeimg.com/80/80/people/8" />
-        <div>
-          <ActCardTitle>Happy to help teach CSS</ActCardTitle>
-          <ActCardDescription>
-            Salty Walty - Auckland, New Zealand
-          </ActCardDescription>
-        </div>
-      </ActCardContainer>
-    </>
-  );
+    )
+  })
+
 }
 
 const ActCardContainer = styled("a", {
