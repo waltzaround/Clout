@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
+import { groupBy } from 'lodash'
 import { StatefulTabs, Tab, StyledTab } from "baseui/tabs-motion";
 import { Label2 } from "baseui/typography";
 import AskTabs from "./AskTabs";
@@ -35,10 +36,23 @@ const tabBarStyle = ({ $theme }) => ({
   backgroundColor: "rgba(0,0,0,0)",
 });
 
-const content = [<AskTabs />, <OfferTabs />];
-
 export default function ListMain() {
+  const [offers, setOffers] = useState([])
+  const [asks, setAsks] = useState([])
+
+  const fetchActivityList = async () => {
+    const activityRequest = await fetch('/api/activity/');
+    const { activity } = await activityRequest.json();
+    const { ask, offer } = groupBy(activity, 'type')
+    setAsks(ask)
+    setOffers(offer|| [])
+  }
+
+  useEffect(() => {
+    fetchActivityList()
+  }, [])
   const [activeKey, setActiveKey] = React.useState("0");
+  const content = [<AskTabs asks={asks}/>, <OfferTabs offers={offers}/>];
   return (
     <StatefulTabs
       initialState={{ activeKey: activeKey }}
