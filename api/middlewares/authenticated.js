@@ -1,5 +1,5 @@
 function authenticated(req, res, next) {
-  if (req.user) { 
+  if (req.user) {
     return next();
   }
   req.session.returnTo = req.originalUrl;

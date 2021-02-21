@@ -47,7 +47,13 @@ export default function Home() {
 
       <main className={styles.main}>
         <MainSectionNoAuth>
-          <Heading>Volunteer in New Zealand</Heading>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Heading>Volunteer in New Zealand</Heading>
+            <div>
+              <Button style={{ marginRight: 20}}><a href="/api/user/login">Login</a></Button>
+              <Button><a href="/api/user/logout">Logout</a></Button>
+            </div>
+          </div>
           <Description>
             Discover ways to get involved in volunteering and help out in your
             community. Find ways to ask for help when you need it.
