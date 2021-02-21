@@ -10,6 +10,7 @@ const activitySchema = new Schema({
     enum: ['draft', 'open', 'closed'],
     default: 'draft',
   },
+  location: String,
   type: {
     type: String,
     enum: ['ask', 'offer'],
